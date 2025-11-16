@@ -8,7 +8,7 @@
 
 #include "queue.h"
 
-Queue::Queue(bool isFIFO) {
+Queue::Queue(bool is_fifo) {
     /* *************************************************
      * Default constructor for Queue.
      *
@@ -19,8 +19,8 @@ Queue::Queue(bool isFIFO) {
      * *************************************************/
     head = nullptr;
     tail = nullptr;
-    count = 0;
-    this.isFIFO = isFIFO;
+    count_ = 0;
+    isFIFO = is_fifo;
 }
 
 Queue::~Queue() {
@@ -78,7 +78,7 @@ int Queue::peek() {
      * *************************************************/
     int nodeId = -1;
 
-    if (count > 0) {
+    if (count_ > 0) {
         if (isFIFO) {
             nodeId = tail->data.id;
         } else {
@@ -98,7 +98,7 @@ int Queue::count() {
      * @exception na : na
      * @note na
      * *************************************************/
-    return count;
+    return count_;
 }
 
 bool Queue::exists(int id) {
@@ -205,7 +205,7 @@ bool Queue::push(int id, string* information) {
 
         head = newNode;
 
-        count++;
+        count_++;
         success = true;
     }
 
@@ -235,7 +235,7 @@ void Queue::clear() {
     head = nullptr;
     tail = nullptr;
 
-    count = 0;
+    count_ = 0;
 }
 
 bool Queue::removeHead(Data* data) {
@@ -266,7 +266,7 @@ bool Queue::removeHead(Data* data) {
         delete temp;
         temp = nullptr;
 
-        count--;
+        count_--;
 
         success = true;
     }
@@ -302,7 +302,7 @@ bool Queue::removeTail(Data* data) {
         delete temp;
         temp = nullptr;
 
-        count--;
+        count_--;
 
         success = true;
     }

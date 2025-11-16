@@ -9,6 +9,9 @@
 #ifndef QUEUE_H
 #define QUEUE_H
 
+#include <string>
+using std::string;
+
 struct Data {
     int id;
     string information;
@@ -31,7 +34,7 @@ class Queue {
         /**********************
         Getters/Accessors
         ***********************/
-        bool pull(Data*)
+        bool pull(Data*);
         int peek();
         int count();
         bool exists(int);
@@ -56,7 +59,7 @@ class Queue {
         ***********************/
         Node* head;
         Node* tail;
-        int count;
+        int count_;
         bool isFIFO;
 };
 
