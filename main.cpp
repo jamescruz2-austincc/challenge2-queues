@@ -165,7 +165,7 @@ int main(int argc, char **argv) {
                     std::cout << "Finding position of BAD id (-1): " << fifoQueue.find(-1) << std::endl;
                 } else {
                     testId = rand() % MAXID + 1;
-                    std::cout << "Finding position of id " << testId << "exists: " << fifoQueue.find(testId) << std::endl;
+                    std::cout << "Finding position of id " << testId << ": " << fifoQueue.find(testId) << std::endl;
                 }
                 break;
             case 7:
@@ -213,7 +213,7 @@ int main(int argc, char **argv) {
                     std::cout << "Finding position of BAD id (-1): " << lifoQueue.find(-1) << std::endl;
                 } else {
                     testId = rand() % MAXID + 1;
-                    std::cout << "Finding position of id " << testId << "exists: " << lifoQueue.find(testId) << std::endl;
+                    std::cout << "Finding position of id " << testId << ": " << lifoQueue.find(testId) << std::endl;
                 }
                 break;
             case 7:
