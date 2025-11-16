@@ -79,4 +79,47 @@ int main(int argc, char **argv) {
     fifoQueue.clear();
     std::cout << "FIFO: Count " << fifoQueue.count() << std::endl;
     std::cout << "Attemping to peek, ID: " << fifoQueue.peek() << std::endl;
+
+
+
+    std::cout << "------------------------------------------" << std::endl;
+    std::cout << "Test 2: Testing LIFO Queue" << std::endl;
+    std::cout << "------------------------------------------" << std::endl;
+    Queue lifoQueue(false);
+    std::cout << "LIFO Queue Created: Count " << lifoQueue.count() << std::endl;
+
+    std::cout << "------------------------------------------" << std::endl;
+    std::cout << "Test 2a: LIFO: Testing push, peek, and count" << std::endl;
+    std::cout << "------------------------------------------" << std::endl;
+    for (int i = 0; i < testdatasize; i++) {
+        std::cout << "Adding ID: " << ids[i] << " Info: " << strs[i] << " ... " << (lifoQueue.push(ids[i], &strs[i]) ? "SUCCESS" : "FAILED") << std::endl;
+        std::cout << "Peeking ID: " << lifoQueue.peek() << std::endl;
+        std::cout << "LIFO: Count " << lifoQueue.count() << std::endl;
+    }
+
+    std::cout << "------------------------------------------" << std::endl;
+    std::cout << "Test 2b: LIFO: Testing pull and count" << std::endl;
+    std::cout << "------------------------------------------" << std::endl;
+    for (int i = 0; i < testdatasize; i++) {
+        std::cout << "Pulling: " << (lifoQueue.pull(&tempData) ? "SUCCESS" : "FAILED") << " ID: " << tempData.id << " Info: " << tempData.information << std::endl;
+        std::cout << "LIFO: Count " << lifoQueue.count() << std::endl;
+    }
+
+    std::cout << "------------------------------------------" << std::endl;
+    std::cout << "Test 2c: LIFO: Testing push, exists, and find" << std::endl;
+    std::cout << "------------------------------------------" << std::endl;
+    for (int i = 0; i < testdatasize; i++) {
+        std::cout << "Adding ID: " << ids[i] << " Info: " << strs[i] << " ... " << (lifoQueue.push(ids[i], &strs[i]) ? "SUCCESS" : "FAILED") << std::endl;
+        std::cout << "Node with ID " << ids[i] << " Exists? : " << (lifoQueue.exists(ids[i]) ? "TRUE" : "FALSE") << std::endl;
+        std::cout << "Finding position of node with ID " << ids[i] << ": POSITION " << lifoQueue.find(ids[i]) << std::endl;
+    }
+
+    std::cout << "------------------------------------------" << std::endl;
+    std::cout << "Test 2d: LIFO: Testing clear" << std::endl;
+    std::cout << "------------------------------------------" << std::endl;
+    std::cout << "LIFO: Count " << lifoQueue.count() << std::endl;
+    std::cout << "Clearing..."<< std::endl;
+    lifoQueue.clear();
+    std::cout << "LIFO: Count " << lifoQueue.count() << std::endl;
+    std::cout << "Attemping to peek, ID: " << lifoQueue.peek() << std::endl;
 }
