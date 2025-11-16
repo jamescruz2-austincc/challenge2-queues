@@ -76,7 +76,17 @@ int Queue::peek() {
      * @note Passed Data struct is assigned -1 in id
      *       and an empty string if fails.
      * *************************************************/
-    
+    int nodeId = -1;
+
+    if (count > 0) {
+        if (isFIFO) {
+            nodeId = tail->data.id;
+        } else {
+            nodeId = head->data.id;
+        }
+    }
+
+    return nodeId;
 }
 
 int Queue::count() {
