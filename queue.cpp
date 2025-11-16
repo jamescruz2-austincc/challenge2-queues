@@ -113,6 +113,21 @@ bool Queue::exists(int id) {
      * @exception na : na
      * @note na
      * *************************************************/
+    bool found = false;
+
+    if (id > 0) {
+        Node* current = head;
+        while (current != nullptr && !found) {
+            if (current->data.id == id) {
+                found = true;
+            }
+            if (!found) {
+                current = current->next;
+            }
+        }
+    }
+
+    return found;
 }
 
 int Queue::find(int id) {
