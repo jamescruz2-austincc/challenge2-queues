@@ -47,6 +47,15 @@ bool Queue::pull(Data* data) {
      * @note Passed Data struct is assigned -1 in id
      *       and an empty string if fails.
      * *************************************************/
+    bool success = false;
+
+    if(isFIFO) {
+        success = removeTail(data);
+    } else {
+        success = removeHead(data);
+    }
+
+    return success;
 }
 
 
@@ -123,6 +132,7 @@ bool Queue::push(int id, string* information) {
 
         if(head == nullptr) {
             newNode->next = nullptr;
+            tail = newNode;
         } else {
             newNode->next = head;
         }
