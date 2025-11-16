@@ -205,4 +205,28 @@ bool Queue::removeTail(Data* data) {
      * @exception na : na
      * @note na
      * *************************************************/
+    bool success = false;
+
+    if (tail != nullptr) {
+        data->id = tail->data.id;
+        data->information = tail->data.information;
+
+        Node* temp = tail;
+        tail = tail->prev;
+
+        if (tail != nullptr) {
+            tail->next = nullptr;
+        } else {
+            head = nullptr;
+        }
+        
+        delete temp;
+        temp = nullptr;
+
+        count--;
+
+        success = true;
+    }
+    
+    return success;
 }
