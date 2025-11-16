@@ -113,6 +113,25 @@ bool Queue::push(int id, string* information) {
      * @exception na : na
      * @note na
      * *************************************************/
+    bool success = false;
+
+    if (id > 0 && information != nullptr && !(*information).empty()) {
+        Node* newNode = new Node();
+
+        newNode->data.id = id;
+        newNode->data.information = information;
+
+        if(head == nullptr) {
+            newNode->next = nullptr;
+        } else {
+            newNode->next = head;
+        }
+
+        head = newNode;
+        success = true;
+    }
+
+    return success;
 }
 
 void Queue::clear() {
