@@ -17,6 +17,9 @@ Queue::Queue(bool isFIFO) {
      * @exception na : na
      * @note na
      * *************************************************/
+    head = nullptr;
+    tail = nullptr;
+    count = 0;
     this.isFIFO = isFIFO;
 }
 
@@ -29,6 +32,7 @@ Queue::~Queue() {
      * @exception na : na
      * @note na
      * *************************************************/
+    clear();
 }
 
 bool Queue::pull(Data* data) {
