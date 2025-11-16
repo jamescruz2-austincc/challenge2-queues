@@ -55,6 +55,11 @@ bool Queue::pull(Data* data) {
         success = removeHead(data);
     }
 
+    if (!success) {
+        data->id = -1;
+        data->information = "";
+    }
+
     return success;
 }
 
@@ -71,6 +76,7 @@ int Queue::peek() {
      * @note Passed Data struct is assigned -1 in id
      *       and an empty string if fails.
      * *************************************************/
+    
 }
 
 int Queue::count() {
