@@ -17,6 +17,7 @@ struct Data {
 struct Node {
     Data data;
     Node* next;
+    Node* prev;
 };
 
 class Queue {

@@ -128,16 +128,20 @@ bool Queue::push(int id, string* information) {
         Node* newNode = new Node();
 
         newNode->data.id = id;
-        newNode->data.information = information;
+        newNode->data.information = *information;
 
         if(head == nullptr) {
             newNode->next = nullptr;
+            newNode->prev = nullptr;
             tail = newNode;
         } else {
+            head->prev = newNode;
             newNode->next = head;
         }
 
         head = newNode;
+
+        count++;
         success = true;
     }
 
@@ -165,6 +169,30 @@ bool Queue::removeHead(Data* data) {
      * @exception na : na
      * @note na
      * *************************************************/
+    bool success = false;
+
+    if (head != nullptr) {
+        data->id = head->data.id;
+        data->information = head->data.information;
+
+        Node* temp = head;
+        head = head->next;
+
+        if (head != nullptr) {
+            head->prev = nullptr;
+        } else {
+            tail = nullptr;
+        }
+
+        delete temp;
+        temp = nullptr;
+
+        count--;
+
+        success = true;
+    }
+    
+    return success;
 }
 
 bool Queue::removeTail(Data* data) {
