@@ -221,6 +221,21 @@ void Queue::clear() {
      * @exception na : na
      * @note na
      * *************************************************/
+    Node *current = head;
+    Node *next = nullptr;
+
+    while (current != nullptr) {
+        next = current->next;
+
+        delete current;
+
+        current = next;
+    }
+
+    head = nullptr;
+    tail = nullptr;
+
+    count = 0;
 }
 
 bool Queue::removeHead(Data* data) {
