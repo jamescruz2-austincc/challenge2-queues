@@ -34,7 +34,6 @@ class Queue {
         /**********************
         Getters/Accessors
         ***********************/
-        bool pull(Data*);
         int peek();
         int count();
         bool exists(int);
@@ -43,6 +42,7 @@ class Queue {
         /**********************
         Setters/Mutators
         ***********************/
+        bool pull(Data*);
         bool push(int, string*);
         void clear();
         
