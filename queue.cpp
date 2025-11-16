@@ -8,7 +8,7 @@
 
 #include "queue.h"
 
-Queue::Queue(bool is_fifo) {
+Queue::Queue(bool isFIFO) {
     /* *************************************************
      * Default constructor for Queue.
      *
@@ -20,7 +20,7 @@ Queue::Queue(bool is_fifo) {
     head = nullptr;
     tail = nullptr;
     count_ = 0;
-    isFIFO = is_fifo;
+    this->isFIFO = isFIFO;
 }
 
 Queue::~Queue() {
@@ -73,8 +73,7 @@ int Queue::peek() {
      * @param na : na
      * @return int : Id of the top node.
      * @exception na : na
-     * @note Passed Data struct is assigned -1 in id
-     *       and an empty string if fails.
+     * @note na
      * *************************************************/
     int nodeId = -1;
 
