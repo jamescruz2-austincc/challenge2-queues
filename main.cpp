@@ -174,4 +174,52 @@ int main(int argc, char **argv) {
                 break;
         }
     }
+
+
+
+    std::cout << "------------------------------------------" << std::endl;
+    std::cout << "Test 4: Randomized LIFO testing" << std::endl;
+    std::cout << "------------------------------------------" << std::endl;
+    for (int i = 0; i < TESTCOUNT; i++) {
+        testId = rand() % MAXID + 1;
+        testStr = "";
+        for (int j = 0; j < TESTSTRLENGTH; j++) {
+            testStr += characters[rand() % characters.length()];
+        }
+
+        switch (rand() % 7 + 1) {
+            case 1:
+                std::cout << "Adding ID: " << testId << " Info: " << testStr << " ... " << (lifoQueue.push(testId, &testStr) ? "SUCCESS" : "FAILED") << std::endl;
+                break;
+            case 2:
+                std::cout << "Pulling: " << (lifoQueue.pull(&tempData) ? "SUCCESS" : "FAILED") << " ID: " << tempData.id << " Info: " << tempData.information << std::endl;
+                break;
+            case 3:
+                std::cout << "Peeking: " << lifoQueue.peek() << std::endl;
+                break;
+            case 4:
+                std::cout << "Current Count is: " << lifoQueue.count() << std::endl;
+                break;
+            case 5:
+                if (rand() % 2 == 0) {
+                    std::cout << "Checking if bad id (-1) exists: " << (lifoQueue.exists(-1) ? "TRUE" : "FALSE") << std::endl;
+                } else {
+                    testId = rand() % MAXID + 1;
+                    std::cout << "Checking if id " << testId << "exists: " << (lifoQueue.exists(testId) ? "TRUE" : "FALSE") << std::endl;
+                }
+                break;
+            case 6:
+                if (rand() % 2 == 0) {
+                    std::cout << "Finding position of BAD id (-1): " << lifoQueue.find(-1) << std::endl;
+                } else {
+                    testId = rand() % MAXID + 1;
+                    std::cout << "Finding position of id " << testId << "exists: " << lifoQueue.find(testId) << std::endl;
+                }
+                break;
+            case 7:
+                std::cout << "Clearing LIFO Queue..." << std::endl;
+                lifoQueue.clear();
+                break;
+        }
+    }
 }
