@@ -5,3 +5,143 @@
 *           learnings from Stack and Linked List
 *  
 ************************************************* */
+
+#include "queue.h"
+
+Queue::Queue(bool isFIFO) {
+    /* *************************************************
+     * Default constructor for Queue.
+     *
+     * @param isFifo : is FIFO, not LIFO
+     * @return na : na
+     * @exception na : na
+     * @note na
+     * *************************************************/
+    
+}
+
+Queue::~Queue() {
+    /* *************************************************
+     * Destructor for Queue.
+     *
+     * @param na : na
+     * @return na : na
+     * @exception na : na
+     * @note na
+     * *************************************************/
+}
+
+bool Queue::pull(Data* data) {
+    /* *************************************************
+     * Removes the top node (tail if FIFO, head if LIFO)
+     * and assigns its data to passed data ptr.
+     * Returns false if fails.
+     *
+     * @param data : Empty Data struct to assign node data
+     * @return bool : Node is successfully pulled
+     * @exception na : na
+     * @note Passed Data struct is assigned -1 in id
+     *       and an empty string if fails.
+     * *************************************************/
+}
+
+
+int Queue::peek() {
+    /* *************************************************
+     * Reads data from the top node (tail if FIFO, head if LIFO)
+     * and returns the id of the node. Returns -1 if no
+     * node is found.
+     *
+     * @param na : na
+     * @return int : Id of the top node.
+     * @exception na : na
+     * @note Passed Data struct is assigned -1 in id
+     *       and an empty string if fails.
+     * *************************************************/
+}
+
+int Queue::count() {
+    /* *************************************************
+     * Returns the total number of nodes in the Queue.
+     *
+     * @param na : na
+     * @return int : Number of nodes in the queue.
+     * @exception na : na
+     * @note na
+     * *************************************************/
+}
+
+bool Queue::exists(int id) {
+    /* *************************************************
+     * Searches the queue for a node containing data
+     * with the passed id. Returns true if a matching node
+     * is found.
+     *
+     * @param id : Id of the node to search for.
+     * @return bool : Node containing data with passed id
+     *                was found.
+     * @exception na : na
+     * @note na
+     * *************************************************/
+}
+
+int Queue::find(int id) {
+    /* *************************************************
+     * Searches the queue for a node containing data
+     * with the passed id. Returns the queue position of
+     * the matching node.
+     *
+     * @param id : Id of the node to search for.
+     * @return int : Queue position of the found node.
+     * @exception na : na
+     * @note Returns -1 if no matching node is found.
+     * *************************************************/
+}
+
+bool Queue::push(int id, string* information) {
+    /* *************************************************
+     * Adds a new node containing the passed data to the
+     * head of the queue.
+     *
+     * @param id : Id to pass to new node.
+     * @param information : String to pass to new node.
+     * @return bool : Node was successfully added.
+     * @exception na : na
+     * @note na
+     * *************************************************/
+}
+
+void Queue::clear() {
+    /* *************************************************
+     * Removes all nodes from the queue.
+     *
+     * @param na : na
+     * @return na : na
+     * @exception na : na
+     * @note na
+     * *************************************************/
+}
+
+bool Queue::removeHead(Data* data) {
+    /* *************************************************
+     * Removes head node in LIFO case. Assigns data to
+     * passed data ptr. Returns true if successful.
+     *
+     * @param id : Empty Data struct to assign node data.
+     * @return bool : Node was successfully removed.
+     * @exception na : na
+     * @note na
+     * *************************************************/
+}
+
+bool Queue::removeTail(Data* data) {
+    /* *************************************************
+     * Removes tail node in FIFO case. Assigns data to
+     * passed data ptr. Returns true if successful.
+     *
+     * @param id : Empty Data struct to assign node data.
+     * @return bool : Node was successfully removed.
+     * @exception na : na
+     * @note na
+     * *************************************************/
+}

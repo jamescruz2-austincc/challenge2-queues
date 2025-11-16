@@ -5,3 +5,58 @@
 *           learnings from Stack and Linked List
 *  
 ************************************************* */
+
+#ifndef QUEUE_H
+#define QUEUE_H
+
+struct Data {
+    int id;
+    string information;
+};
+
+struct Node {
+    Data data;
+    Node* next;
+};
+
+class Queue {
+    public:
+        /**********************
+        Constructor/Destructor
+        ***********************/
+        Queue(bool = true);
+        ~Queue();
+
+        /**********************
+        Getters/Accessors
+        ***********************/
+        bool pull(Data*)
+        int peek();
+        int count();
+        bool exists(int);
+        int find(int);
+
+        /**********************
+        Setters/Mutators
+        ***********************/
+        bool push(int, string*);
+        void clear();
+        
+
+    private:
+        /**********************
+        Methods
+        ***********************/
+        bool removeHead(Data*);
+        bool removeTail(Data*);
+
+        /**********************
+        Attributes
+        ***********************/
+        Node* head;
+        Node* tail;
+        int count;
+        bool isFIFO;
+};
+
+#endif //QUEUE_H
