@@ -141,6 +141,38 @@ int Queue::find(int id) {
      * @exception na : na
      * @note Returns -1 if no matching node is found.
      * *************************************************/
+    bool found = false;
+    int position = -1;
+
+    if (id > 0) {
+        if (isFIFO) {
+            Node* current = tail;
+            while (current != nullptr && !found) {
+                position++;
+                if (current->data.id == id) {
+                    found = true;
+                } else {
+                    current = current->prev;
+                }
+            }
+        } else {
+            Node* current = head;
+            while (current != nullptr && !found) {
+                position++;
+                if (current->data.id == id) {
+                    found = true;
+                } else {
+                    current = current->next;
+                }
+            }
+        }
+
+        if (!found) {
+            position = -1;
+        }
+    }
+
+    return position;
 }
 
 bool Queue::push(int id, string* information) {
