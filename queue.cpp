@@ -98,6 +98,7 @@ int Queue::count() {
      * @exception na : na
      * @note na
      * *************************************************/
+    return count;
 }
 
 bool Queue::exists(int id) {
