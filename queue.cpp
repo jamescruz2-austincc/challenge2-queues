@@ -17,7 +17,7 @@ Queue::Queue(bool isFIFO) {
      * @exception na : na
      * @note na
      * *************************************************/
-    
+    this.isFIFO = isFIFO;
 }
 
 Queue::~Queue() {
